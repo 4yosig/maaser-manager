@@ -1,0 +1,25 @@
+{
+  "name": "maaser-manager",
+  "version": "1.0.0",
+  "description": "אפליקציית ניהול מעשרות - Maaser Manager - A personal web app for managing and calculating charitable giving obligations",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "open http://localhost:8000 && python3 -m http.server 8000"
+  },
+  "keywords": [
+    "maaser",
+    "charity",
+    "hebrew",
+    "pwa",
+    "personal-finance"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/maaser-manager"
+  },
+  "homepage": "https://yourusername.github.io/maaser-manager"
+}

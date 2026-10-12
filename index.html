@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1b5e20">
+    <meta name="description" content="אפליקציית ניהול מעשרות - Maaser Manager">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="מעשרות">
+    
+    <title>ניהול המעשרות - Maaser Manager</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231b5e20' width='192' height='192'/><text x='96' y='120' font-size='80' fill='white' text-anchor='middle' font-weight='bold'>מ</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231b5e20' width='192' height='192' rx='45'/><text x='96' y='120' font-size='80' fill='white' text-anchor='middle' font-weight='bold'>מ</text></svg>">
+    
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Screens will be rendered here -->
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-container" class="modal-container"></div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Service Worker Registration & App Initialization -->
+    <script type="module">
+        import { App } from './js/app.js';
+        
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').catch(err => {
+                console.log('SW registration failed:', err);
+            });
+        }
+
+        // Initialize App
+        window.app = new App();
+        window.app.init();
+    </script>
+</body>
+</html>
